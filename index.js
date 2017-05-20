@@ -4,13 +4,13 @@ let bodyParser = require('body-parser');
 let connectRouter = require('connect-route');
 let serveStatic = require('serve-static');
 var Storage = require('node-storage');
-let db = new Storage('../db');
 
 let app = connect();
 
 app.use(bodyParser());
 app.use(connectRouter(route => {
   route.post('/api/saveCmd', (req, res) => {
+    let db = new Storage('../db');
     let commands = db.get('commands');
     
     if (commands) {
@@ -22,15 +22,31 @@ app.use(connectRouter(route => {
     commands[req.body.name] = req.body.value;
     
     db.put('commands', JSON.stringify(commands));
+    res.end('ok');
   })
   
   route.get('/api/commands', (req, res) => {
+    let db = new Storage('../db');
     let commands = db.get('commands');
     
     if (!commands) {
       commands = "{}"
     }
     res.end(JSON.stringify(commands))
+  })
+  
+  route.get('/api/commands/delete/:id', (req, res) => {
+    let db = new Storage('../db');
+    let commands = db.get('commands');
+    
+    if (!commands) {
+      commands = "{}"
+    }
+    commands = JSON.parse(commands);
+    delete commands[req.params.id];
+    
+    db.put('commands', JSON.stringify(commands));
+    res.end(JSON.stringify(commands));
   })
 }))
 
