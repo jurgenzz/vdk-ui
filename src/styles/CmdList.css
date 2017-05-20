@@ -1,0 +1,20 @@
+#CmdList {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left; 
+}
+
+#CmdList .CmdListItem {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#CmdList .cmdName {
+  display: block;
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 10px;  
+}
+
+#CmdList .cmdValue {
+}
