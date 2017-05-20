@@ -9,10 +9,7 @@ class MainContainer extends React.Component {
     super();
     this.state = {
       commands: [
-        {
-          name: 'asd',
-          value: 'hue'
-        }
+        
       ],
       currentCmd: '!',
       currentReply: '',
