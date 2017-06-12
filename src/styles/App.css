@@ -2,7 +2,7 @@
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   text-align: center;
-  
+
 }
 
 #app h1 {
@@ -21,7 +21,7 @@
   border: 1px solid #ccc;
   font-size: 16px;
   font-weight: 100;
-} 
+}
 
 #app input:focus {
   outline: none;
@@ -33,7 +33,7 @@
   width: 300px;
   text-align: left;
   margin: 5px auto;
-  color: #b3b3b3;  
+  color: #b3b3b3;
 }
 
 #app button {
@@ -45,9 +45,16 @@
   background: #645a6d;
   border-radius: 3px;
   color: #fff;
-  width: 300px; 
+  width: 300px;
 }
 
 #app button:focus {
   outline: none;
+}
+
+#app .err {
+  marginTop: 3px;
+  color: red;
+  display: block;
+  font-size: 12px;
 }

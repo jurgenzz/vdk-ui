@@ -1,20 +1,28 @@
 #CmdList {
   width: 300px;
   margin: 0 auto;
-  text-align: left; 
+  text-align: left;
 }
 
 #CmdList .CmdListItem {
   padding: 5px 0;
   border-bottom: 1px solid #ccc;
+  overflow: hidden;
 }
 
 #CmdList .cmdName {
   display: block;
-  font-size: 12px;
-  color: #ccc;
-  margin-bottom: 10px;  
+  font-size: 16px;
+    color: #645a6d;
+    font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#CmdList .blueSpan {
+  color: #7ABBED;
+  font-weight: bold;
 }
 
 #CmdList .cmdValue {
+  overflow: hidden;
 }

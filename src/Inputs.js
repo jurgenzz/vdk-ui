@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Inputs = ({currentCmd, onChange, submit, currentReply}) => {
+const Inputs = ({currentCmd, onChange, submit, currentReply, errors}) => {
   // console.log(props)
   return (
     <div>
@@ -13,6 +13,7 @@ const Inputs = ({currentCmd, onChange, submit, currentReply}) => {
       <button onClick={() => submit()}>
         Submit
       </button>
+      {errors.map((err, i) => <span className="err" key={'err'+ i}>{err}</span>)}
     </div>
   )
 }
