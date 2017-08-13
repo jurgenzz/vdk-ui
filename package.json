@@ -20,5 +20,8 @@
     "react-dom": "^15.5.4",
     "react-scripts": "^1.0.1",
     "serve-static": "^1.12.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1"
   }
 }
