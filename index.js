@@ -34,6 +34,7 @@ app.use(connectRouter(route => {
     }
     res.end(JSON.stringify(commands))
   })
+  
 
   route.get('/api/commands/delete/:id', (req, res) => {
     let db = new Storage('../db');
@@ -47,6 +48,20 @@ app.use(connectRouter(route => {
 
     db.put('commands', JSON.stringify(commands));
     res.end(JSON.stringify(commands));
+  })
+  
+  route.get('/n', (req, res) => {
+    
+    let q = req.url;
+    q = q.replace(/\/n\?q=+/, '');
+
+    if (q) {
+      res.writeHead(301, {Location: 'http://www.pmlp.gov.lv/lv/sakums/statistika/personvardu-datu-baze/?id=137&query=' + q})
+      res.end('redirect');
+    } else {
+      res.writeHead(301, {Location: 'http://vd.jurg.is'})
+      res.end('redirect');
+    }
   })
 }))
 
