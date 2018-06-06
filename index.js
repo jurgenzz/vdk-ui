@@ -95,7 +95,7 @@ app.use(
           grant_type: "authorization_code",
           code,
           state: user,
-          redirect_uri: "http://jurg.lv/spotify",
+          redirect_uri: "http://vd.jurg.is/spotify",
           client_id: config.client_id,
           client_secret: config.client_secret
         },
