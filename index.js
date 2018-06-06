@@ -88,7 +88,8 @@ app.use(
 
       let code = q[0];
       let user = q[1] && q[1].replace("state=", "");
-      axios({
+     
+    axios({
         url: "https://accounts.spotify.com/api/token",
         method: "post",
         params: {
@@ -128,6 +129,6 @@ app.use(
   })
 );
 
-app.use(serveStatic(__dirname + "/build")).listen(80, function() {
+app.use(serveStatic(__dirname + "/build")).listen(8080, function() {
   console.log("Server running on 8080...");
 });
