@@ -78,12 +78,12 @@ app.use(
 
     route.get("/auth", (req, res) => {
       let q = req.url;
-      q = q.replace(/\/auth\?q=+/, "");
+      q = q.replace(/.+auth\?q=+/, "");
 
       if (q) {
         res.writeHead(301, {
           Location:
-            "https://accounts.spotify.com/authorize?response_type=code&client_id=be947c6cf75b4e5c9f043ca9d01d3548&scope=user-read-currently-playing&redirect_uri=http%3A%2F%2Fjurg.lv%2Fspotify&state=" +
+            "https://accounts.spotify.com/authorize?response_type=code&client_id=be947c6cf75b4e5c9f043ca9d01d3548&scope=user-read-currently-playing&redirect_uri=http%3A%2F%2Fvd.jurg.is%2Fspotify&state=" +
             q
         });
         res.end("redirect");
